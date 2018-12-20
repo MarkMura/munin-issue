@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  testmaster:
+    build: ./testmaster/
+    cap_add:
+      - SYS_PTRACE # to be able to install and run strace
+
+  testnode:
+    build: ./testnode/
