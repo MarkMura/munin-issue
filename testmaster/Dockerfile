@@ -1,7 +1,7 @@
 FROM ubuntu:bionic
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-    munin && \
+    munin netbase && \
     mkdir -p /var/run/munin && chown -R munin:munin /var/run/munin
     # otherwise I get "Failed to create rundir (/var/run/munin): Permission denied at /usr/share/munin/munin-update line 39."
 
